@@ -75,7 +75,7 @@ function [ enir ] = build( PTR, YTR, bname, option, alpha )
     fname = [dname,bname,'_','y.csv'];
     dlmwrite(fname, y, 'delimiter', ',', 'precision', 50);
     
-    cmd = ['./neariso.R ',' ',dname,' ' ,bname];
+    cmd = ['Rscript ','neariso.R ',' ',dname,' ' ,bname];
     status = -1;
     count = 0;
     maxCount = 10;

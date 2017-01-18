@@ -32,10 +32,10 @@ PTE = exp(PTE)./(1+exp(PTE));% Convert output of SVM to uncalibrated probs
 
 disp('Performance of (Quadratic) SVM probabilities : ')
 M = getMeasures(PTE,YTE)
-% Build BBQ Model
+% Build ENIR Model
 ENIR = build(PTR, YTR);
 
-% Calibrated the prediction using BBQ
+% Calibrated the prediction using ENIR
 PTE_enir = predict(ENIR, PTE, 1);
 disp('Performance of Calibrated Probabilities using ENIR : ')
 M_enir = getMeasures(PTE_enir,YTE)
